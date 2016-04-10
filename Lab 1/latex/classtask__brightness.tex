@@ -1,0 +1,69 @@
+\hypertarget{classtask__brightness}{}\section{task\+\_\+brightness Class Reference}
+\label{classtask__brightness}\index{task\+\_\+brightness@{task\+\_\+brightness}}
+
+
+This task controls the brightness of an L\+ED using an analog input from the A/D converter.  
+
+
+
+
+{\ttfamily \#include $<$task\+\_\+brightness.\+h$>$}
+
+Inheritance diagram for task\+\_\+brightness\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtask__brightness}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classtask__brightness_a5802baf3a0c9fe53ccbce8966d1fad47}{task\+\_\+brightness} (const char $\ast$, unsigned port\+B\+A\+S\+E\+\_\+\+T\+Y\+PE, size\+\_\+t, emstream $\ast$)
+\item 
+void \hyperlink{classtask__brightness_a615beac07a99f0856f048a46fd9a3898}{run} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This task controls the brightness of an L\+ED using an analog input from the A/D converter. 
+
+The A/D converter is run using a driver in files {\ttfamily \hyperlink{adc_8h}{adc.\+h}} and {\ttfamily \hyperlink{adc_8cpp}{adc.\+cpp}}. Code in this task sets up a timer/counter in P\+WM mode and controls the L\+ED\textquotesingle{}s average brightness. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{task\+\_\+brightness@{task\+\_\+brightness}!task\+\_\+brightness@{task\+\_\+brightness}}
+\index{task\+\_\+brightness@{task\+\_\+brightness}!task\+\_\+brightness@{task\+\_\+brightness}}
+\subsubsection[{\texorpdfstring{task\+\_\+brightness(const char $\ast$, unsigned port\+B\+A\+S\+E\+\_\+\+T\+Y\+P\+E, size\+\_\+t, emstream $\ast$)}{task_brightness(const char *, unsigned portBASE_TYPE, size_t, emstream *)}}]{\setlength{\rightskip}{0pt plus 5cm}task\+\_\+brightness\+::task\+\_\+brightness (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{a\+\_\+name, }
+\item[{unsigned port\+B\+A\+S\+E\+\_\+\+T\+Y\+PE}]{a\+\_\+priority, }
+\item[{size\+\_\+t}]{a\+\_\+stack\+\_\+size, }
+\item[{emstream $\ast$}]{p\+\_\+ser\+\_\+dev}
+\end{DoxyParamCaption}
+)}\hypertarget{classtask__brightness_a5802baf3a0c9fe53ccbce8966d1fad47}{}\label{classtask__brightness_a5802baf3a0c9fe53ccbce8966d1fad47}
+This constructor creates a task which controls the brightness of an L\+ED using input from an A/D converter. The main job of this constructor is to call the constructor of parent class ({\ttfamily frt\+\_\+task} ); the parent\textquotesingle{}s constructor the work. 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+name} & A character string which will be the name of this task \\
+\hline
+{\em a\+\_\+priority} & The priority at which this task will initially run (default\+: 0) \\
+\hline
+{\em a\+\_\+stack\+\_\+size} & The size of this task\textquotesingle{}s stack in bytes (default\+: config\+M\+I\+N\+I\+M\+A\+L\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE) \\
+\hline
+{\em p\+\_\+ser\+\_\+dev} & Pointer to a serial device (port, radio, SD card, etc.) which can be used by this task to communicate (default\+: N\+U\+LL) \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{task\+\_\+brightness@{task\+\_\+brightness}!run@{run}}
+\index{run@{run}!task\+\_\+brightness@{task\+\_\+brightness}}
+\subsubsection[{\texorpdfstring{run(void)}{run(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void task\+\_\+brightness\+::run (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{classtask__brightness_a615beac07a99f0856f048a46fd9a3898}{}\label{classtask__brightness_a615beac07a99f0856f048a46fd9a3898}
+This method is called once by the R\+T\+OS scheduler. Each time around the for (;;) loop, it reads the A/D converter and uses the result to control the brightness of an L\+ED. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{task__brightness_8h}{task\+\_\+brightness.\+h}\item 
+\hyperlink{task__brightness_8cpp}{task\+\_\+brightness.\+cpp}\end{DoxyCompactItemize}

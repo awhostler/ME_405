@@ -1,0 +1,24 @@
+\hypertarget{task__user_8cpp}{}\section{task\+\_\+user.\+cpp File Reference}
+\label{task__user_8cpp}\index{task\+\_\+user.\+cpp@{task\+\_\+user.\+cpp}}
+{\ttfamily \#include $<$avr/io.\+h$>$}\\*
+{\ttfamily \#include $<$avr/wdt.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}task\+\_\+user.\+h\char`\"{}}\\*
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const Tick\+Type\+\_\+t \hyperlink{task__user_8cpp_a608f2ff6213a79bd1f25a29544aeaba5}{ticks\+\_\+to\+\_\+delay} = ((config\+T\+I\+C\+K\+\_\+\+R\+A\+T\+E\+\_\+\+HZ / 1000) $\ast$ 5)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains source code for a user interface task for a M\+E405/\+Free\+R\+T\+OS test suite.
+
+Revisions\+: \begin{DoxyItemize}
+\item 09-\/30-\/2012 J\+RR Original file was a one-\/file demonstration with two tasks \item 10-\/05-\/2012 J\+RR Split into multiple files, one for each task \item 10-\/25-\/2012 J\+RR Changed to a more fully C++ version with class \hyperlink{classtask__user}{task\+\_\+user} \item 11-\/04-\/2012 J\+RR Modified from the data acquisition example to the test suite \item 01-\/04-\/2014 J\+RR Changed base class names to Task\+Base, Task\+Share, etc.\end{DoxyItemize}
+License\+: This file is copyright 2012 by JR Ridgely and released under the Lesser G\+NU Public License, version 2. It intended for educational use only, but its use is not limited thereto. 
+
+\subsection{Variable Documentation}
+\index{task\+\_\+user.\+cpp@{task\+\_\+user.\+cpp}!ticks\+\_\+to\+\_\+delay@{ticks\+\_\+to\+\_\+delay}}
+\index{ticks\+\_\+to\+\_\+delay@{ticks\+\_\+to\+\_\+delay}!task\+\_\+user.\+cpp@{task\+\_\+user.\+cpp}}
+\subsubsection[{\texorpdfstring{ticks\+\_\+to\+\_\+delay}{ticks_to_delay}}]{\setlength{\rightskip}{0pt plus 5cm}const Tick\+Type\+\_\+t ticks\+\_\+to\+\_\+delay = ((config\+T\+I\+C\+K\+\_\+\+R\+A\+T\+E\+\_\+\+HZ / 1000) $\ast$ 5)}\hypertarget{task__user_8cpp_a608f2ff6213a79bd1f25a29544aeaba5}{}\label{task__user_8cpp_a608f2ff6213a79bd1f25a29544aeaba5}
+This constant sets how many R\+T\+OS ticks the task delays if the user\textquotesingle{}s not talking. The duration is calculated to be about 5 ms. 

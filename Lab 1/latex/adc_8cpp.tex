@@ -1,0 +1,55 @@
+\hypertarget{adc_8cpp}{}\section{adc.\+cpp File Reference}
+\label{adc_8cpp}\index{adc.\+cpp@{adc.\+cpp}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$avr/io.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}rs232int.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}adc.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+emstream \& \hyperlink{adc_8cpp_afb33ca9fe94765ee57079e7feb03f975}{operator$<$$<$} (emstream \&serpt, \hyperlink{classadc}{adc} \&a2d)
+\begin{DoxyCompactList}\small\item\em This overloaded operator \char`\"{}prints the A/\+D converter.\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t {\bfseries sampleavg} = 0\hypertarget{adc_8cpp_a31bb5e230c2905f80a3d120d7f5f339a}{}\label{adc_8cpp_a31bb5e230c2905f80a3d120d7f5f339a}
+
+\item 
+uint16\+\_\+tint {\bfseries time} = 0\hypertarget{adc_8cpp_a23797b70f7783cbc35de405e4799d6e3}{}\label{adc_8cpp_a23797b70f7783cbc35de405e4799d6e3}
+
+\item 
+uint16\+\_\+t {\bfseries A\+D\+C\+Read} = 1536\hypertarget{adc_8cpp_a56be14b248ab73a7ebf561a9964c1ea1}{}\label{adc_8cpp_a56be14b248ab73a7ebf561a9964c1ea1}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains a very simple A/D converter driver. This driver should be
+
+Revisions\+: \begin{DoxyItemize}
+\item 01-\/15-\/2008 J\+RR Original (somewhat useful) file \item 10-\/11-\/2012 J\+RR Less original, more useful file with Free\+R\+T\+OS mutex added \item 10-\/12-\/2012 J\+RR There was a bug in the mutex code, and it has been fixed\end{DoxyItemize}
+License\+: This file is copyright 2015 by JR Ridgely and released under the Lesser G\+NU Public License, version 2. It intended for educational use only, but its use is not limited thereto. 
+
+\subsection{Function Documentation}
+\index{adc.\+cpp@{adc.\+cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!adc.\+cpp@{adc.\+cpp}}
+\subsubsection[{\texorpdfstring{operator$<$$<$(emstream \&serpt, adc \&a2d)}{operator<<(emstream &serpt, adc &a2d)}}]{\setlength{\rightskip}{0pt plus 5cm}emstream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{emstream \&}]{serpt, }
+\item[{{\bf adc} \&}]{a2d}
+\end{DoxyParamCaption}
+)}\hypertarget{adc_8cpp_afb33ca9fe94765ee57079e7feb03f975}{}\label{adc_8cpp_afb33ca9fe94765ee57079e7feb03f975}
+
+
+This overloaded operator \char`\"{}prints the A/\+D converter.\char`\"{}. 
+
+The precise meaning of print is left to the user to interpret; it should be something useful. For example, one might print the values of the configuration registers or show current readings from all the A/D channels. 
+\begin{DoxyParams}{Parameters}
+{\em serpt} & Reference to a serial port to which the printout will be printed \\
+\hline
+{\em a2d} & Reference to the A/D driver which is being printed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the same serial device on which we write information. This is used to string together things to write with {\ttfamily $<$$<$} operators 
+\end{DoxyReturn}

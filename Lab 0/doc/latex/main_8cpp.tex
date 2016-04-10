@@ -1,0 +1,71 @@
+\hypertarget{main_8cpp}{}\section{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.\+cpp@{main.\+cpp}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$avr/io.\+h$>$}\\*
+{\ttfamily \#include $<$avr/wdt.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}Free\+R\+T\+O\+S.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}task.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}queue.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}croutine.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}rs232int.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}time\+\_\+stamp.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}taskbase.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}textqueue.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}taskqueue.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}taskshare.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}shares.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}task\+\_\+brightness.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}task\+\_\+user.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Text\+Queue $\ast$ \hyperlink{main_8cpp_acd99bf5d187d4809af2f460a5415e904}{p\+\_\+print\+\_\+ser\+\_\+queue}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains the \hyperlink{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main()} code for a program which runs the M\+E405 board for M\+E405 lab 1. This program currently uses obfuscated code to use an A/D converter to convert an analog signal into an L\+ED brightness via pulse width modulation. {\bfseries This} {\bfseries comment} {\bfseries is} {\bfseries quite} {\bfseries messed} {\bfseries up} {\bfseries and} {\bfseries the} {\bfseries student} {\bfseries should} {\bfseries fix} {\bfseries it} {\bfseries so} {\bfseries that} {\bfseries it} {\bfseries accurately} {\bfseries reflects} {\bfseries the} {\bfseries function} {\bfseries of} {\bfseries the} {\bfseries program} {\bfseries which} {\bfseries is} {\bfseries handed} {\bfseries in} {\bfseries for} {\bfseries this} {\bfseries assignment}.
+
+Revisions\+: \begin{DoxyItemize}
+\item 09-\/30-\/2012 J\+RR Original file was a one-\/file demonstration with two tasks \item 10-\/05-\/2012 J\+RR Split into multiple files, one for each task plus a main one \item 10-\/30-\/2012 J\+RR A hopefully somewhat stable version with global queue pointers and the new operator used for most memory allocation \item 11-\/04-\/2012 J\+RR Free\+R\+T\+OS Swoop demo program changed to a sweet test suite \item 01-\/05-\/2012 J\+RR Program reconfigured as M\+E405 Lab 1 starting point \item 03-\/28-\/2014 J\+RR Pointers to shared variables and queues changed to references \item 01-\/04-\/2015 J\+RR Names of share \& queue classes changed; allocated with new now\end{DoxyItemize}
+License\+: This file is copyright 2015 by JR Ridgely and released under the Lesser G\+NU Public License, version 2. It intended for educational use only, but its use is not limited thereto. 
+
+\subsection{Function Documentation}
+\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{main(void)}{main(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{}\label{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}
+The main function sets up the R\+T\+OS. Some test tasks are created. Then the scheduler is started up; the scheduler runs until power is turned off or there\textquotesingle{}s a reset. \begin{DoxyReturn}{Returns}
+This is a real-\/time microcontroller program which doesn\textquotesingle{}t return. Ever. 
+\end{DoxyReturn}
+
+
+Definition at line 81 of file main.\+cpp.
+
+
+
+References p\+\_\+print\+\_\+ser\+\_\+queue, and adc\+::read\+\_\+once().
+
+
+
+\subsection{Variable Documentation}
+\index{main.\+cpp@{main.\+cpp}!p\+\_\+print\+\_\+ser\+\_\+queue@{p\+\_\+print\+\_\+ser\+\_\+queue}}
+\index{p\+\_\+print\+\_\+ser\+\_\+queue@{p\+\_\+print\+\_\+ser\+\_\+queue}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{p\+\_\+print\+\_\+ser\+\_\+queue}{p_print_ser_queue}}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Queue$\ast$ p\+\_\+print\+\_\+ser\+\_\+queue}\hypertarget{main_8cpp_acd99bf5d187d4809af2f460a5415e904}{}\label{main_8cpp_acd99bf5d187d4809af2f460a5415e904}
+This is a print queue, descended from {\ttfamily emstream} so that things can be printed into the queue using the \char`\"{}$<$$<$\char`\"{} operator and they\textquotesingle{}ll come out the other end as a stream of characters. It\textquotesingle{}s used by tasks that send things to the user interface task to be printed. 
+
+Definition at line 71 of file main.\+cpp.
+
+
+
+Referenced by main(), and task\+\_\+user\+::run().
+

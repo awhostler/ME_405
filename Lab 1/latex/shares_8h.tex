@@ -1,0 +1,21 @@
+\hypertarget{shares_8h}{}\section{shares.\+h File Reference}
+\label{shares_8h}\index{shares.\+h@{shares.\+h}}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Text\+Queue $\ast$ \hyperlink{shares_8h_acd99bf5d187d4809af2f460a5415e904}{p\+\_\+print\+\_\+ser\+\_\+queue}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains extern declarations for queues and other inter-\/task data communication objects used in a M\+E405/507/\+Free\+R\+T\+OS project.
+
+Revisions\+: \begin{DoxyItemize}
+\item 09-\/30-\/2012 J\+RR Original file was a one-\/file demonstration with two tasks \item 10-\/05-\/2012 J\+RR Split into multiple files, one for each task plus a main one \item 10-\/29-\/2012 J\+RR Reorganized with global queue and shared data references \item 01-\/04-\/2014 J\+RR Re-\/reorganized, allocating shares with new now\end{DoxyItemize}
+License\+: This file is copyright 2015 by JR Ridgely and released under the Lesser G\+NU Public License, version 2. It intended for educational use only, but its use is not limited thereto. 
+
+\subsection{Variable Documentation}
+\index{shares.\+h@{shares.\+h}!p\+\_\+print\+\_\+ser\+\_\+queue@{p\+\_\+print\+\_\+ser\+\_\+queue}}
+\index{p\+\_\+print\+\_\+ser\+\_\+queue@{p\+\_\+print\+\_\+ser\+\_\+queue}!shares.\+h@{shares.\+h}}
+\subsubsection[{\texorpdfstring{p\+\_\+print\+\_\+ser\+\_\+queue}{p_print_ser_queue}}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Queue$\ast$ p\+\_\+print\+\_\+ser\+\_\+queue}\hypertarget{shares_8h_acd99bf5d187d4809af2f460a5415e904}{}\label{shares_8h_acd99bf5d187d4809af2f460a5415e904}
+This is a print queue, descended from {\ttfamily emstream} so that things can be printed into the queue using the \char`\"{}$<$$<$\char`\"{} operator and they\textquotesingle{}ll come out the other end as a stream of characters. It\textquotesingle{}s used by tasks that send things to the user interface task to be printed. 

@@ -1,0 +1,128 @@
+\hypertarget{classtask__user}{}\section{task\+\_\+user Class Reference}
+\label{classtask__user}\index{task\+\_\+user@{task\+\_\+user}}
+
+
+{\ttfamily \#include $<$task\+\_\+user.\+h$>$}
+
+Inheritance diagram for task\+\_\+user\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtask__user}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classtask__user_a3aba77563b375bb14838800608da48bc}{task\+\_\+user} (const char $\ast$, unsigned port\+B\+A\+S\+E\+\_\+\+T\+Y\+PE, size\+\_\+t, emstream $\ast$)
+\item 
+void \hyperlink{classtask__user_adca6429d57be25e8d411414fc8ad75af}{run} (void)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classtask__user_a75475060f83bae1e44bcc8a5c34015c7}{print\+\_\+help\+\_\+message} (void)
+\item 
+void \hyperlink{classtask__user_a105bebbd9cb1031154c3dfc3662db4a0}{show\+\_\+status} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This task interacts with the user for force him/her to do what he/she is told. What a rude task this is. Then again, computers tend to be that way; if they\textquotesingle{}re polite with you, they\textquotesingle{}re probably spying on you. 
+
+Definition at line 60 of file task\+\_\+user.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{task\+\_\+user@{task\+\_\+user}!task\+\_\+user@{task\+\_\+user}}
+\index{task\+\_\+user@{task\+\_\+user}!task\+\_\+user@{task\+\_\+user}}
+\subsubsection[{\texorpdfstring{task\+\_\+user(const char $\ast$, unsigned port\+B\+A\+S\+E\+\_\+\+T\+Y\+P\+E, size\+\_\+t, emstream $\ast$)}{task_user(const char *, unsigned portBASE_TYPE, size_t, emstream *)}}]{\setlength{\rightskip}{0pt plus 5cm}task\+\_\+user\+::task\+\_\+user (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{a\+\_\+name, }
+\item[{unsigned port\+B\+A\+S\+E\+\_\+\+T\+Y\+PE}]{a\+\_\+priority, }
+\item[{size\+\_\+t}]{a\+\_\+stack\+\_\+size, }
+\item[{emstream $\ast$}]{p\+\_\+ser\+\_\+dev}
+\end{DoxyParamCaption}
+)}\hypertarget{classtask__user_a3aba77563b375bb14838800608da48bc}{}\label{classtask__user_a3aba77563b375bb14838800608da48bc}
+This constructor creates a new data acquisition task. Its main job is to call the parent class\textquotesingle{}s constructor which does most of the work. 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+name} & A character string which will be the name of this task \\
+\hline
+{\em a\+\_\+priority} & The priority at which this task will initially run (default\+: 0) \\
+\hline
+{\em a\+\_\+stack\+\_\+size} & The size of this task\textquotesingle{}s stack in bytes (default\+: config\+M\+I\+N\+I\+M\+A\+L\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE) \\
+\hline
+{\em p\+\_\+ser\+\_\+dev} & Pointer to a serial device (port, radio, SD card, etc.) which can be used by this task to communicate (default\+: N\+U\+LL) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 52 of file task\+\_\+user.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{task\+\_\+user@{task\+\_\+user}!print\+\_\+help\+\_\+message@{print\+\_\+help\+\_\+message}}
+\index{print\+\_\+help\+\_\+message@{print\+\_\+help\+\_\+message}!task\+\_\+user@{task\+\_\+user}}
+\subsubsection[{\texorpdfstring{print\+\_\+help\+\_\+message(void)}{print_help_message(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void task\+\_\+user\+::print\+\_\+help\+\_\+message (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classtask__user_a75475060f83bae1e44bcc8a5c34015c7}{}\label{classtask__user_a75475060f83bae1e44bcc8a5c34015c7}
+This method prints a simple help message. 
+
+Definition at line 210 of file task\+\_\+user.\+cpp.
+
+
+
+References P\+R\+O\+G\+R\+A\+M\+\_\+\+V\+E\+R\+S\+I\+ON.
+
+
+
+Referenced by run().
+
+\index{task\+\_\+user@{task\+\_\+user}!run@{run}}
+\index{run@{run}!task\+\_\+user@{task\+\_\+user}}
+\subsubsection[{\texorpdfstring{run(void)}{run(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void task\+\_\+user\+::run (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{classtask__user_adca6429d57be25e8d411414fc8ad75af}{}\label{classtask__user_adca6429d57be25e8d411414fc8ad75af}
+This method is called by the R\+T\+OS once to run the task loop for ever and ever.
+
+This task interacts with the user for force him/her to do what he/she is told. It is just following the modern government model of \char`\"{}\+This is the land of the free...
+free to do exactly what you\textquotesingle{}re told.\char`\"{} 
+
+Definition at line 70 of file task\+\_\+user.\+cpp.
+
+
+
+References p\+\_\+print\+\_\+ser\+\_\+queue, print\+\_\+help\+\_\+message(), and show\+\_\+status().
+
+\index{task\+\_\+user@{task\+\_\+user}!show\+\_\+status@{show\+\_\+status}}
+\index{show\+\_\+status@{show\+\_\+status}!task\+\_\+user@{task\+\_\+user}}
+\subsubsection[{\texorpdfstring{show\+\_\+status(void)}{show_status(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void task\+\_\+user\+::show\+\_\+status (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classtask__user_a105bebbd9cb1031154c3dfc3662db4a0}{}\label{classtask__user_a105bebbd9cb1031154c3dfc3662db4a0}
+This method displays information about the status of the system, including the following\+: \begin{DoxyItemize}
+\item The name and version of the program \item The name, status, priority, and free stack space of each task \item Processor cycles used by each task \item Amount of heap space free and setting of R\+T\+OS tick timer \end{DoxyItemize}
+
+
+Definition at line 231 of file task\+\_\+user.\+cpp.
+
+
+
+References P\+R\+O\+G\+R\+A\+M\+\_\+\+V\+E\+R\+S\+I\+ON.
+
+
+
+Referenced by run().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{task__user_8h}{task\+\_\+user.\+h}\item 
+\hyperlink{task__user_8cpp}{task\+\_\+user.\+cpp}\end{DoxyCompactItemize}

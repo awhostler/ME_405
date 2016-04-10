@@ -1,0 +1,100 @@
+\hypertarget{classadc}{}\section{adc Class Reference}
+\label{classadc}\index{adc@{adc}}
+
+
+This class runs the A/D converter on an A\+VR processor.  
+
+
+
+
+{\ttfamily \#include $<$adc.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classadc_af3b8262c08f5fc5ae325a20622883424}{adc} (emstream $\ast$=N\+U\+LL)
+\begin{DoxyCompactList}\small\item\em This constructor sets up an A/D converter. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{classadc_a2190a59696a7093e1ea605e998ccf97e}{read\+\_\+once} (uint8\+\_\+t)
+\begin{DoxyCompactList}\small\item\em This method takes one A/D reading from the given channel and returns it. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{classadc_a58f1030fe64d3dea4ccd8a2687dd6fce}{read\+\_\+oversampled} (uint8\+\_\+t, uint8\+\_\+t)
+\begin{DoxyCompactList}\small\item\em This takes an averaged A/D reading from a given number of samples. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+emstream $\ast$ \hyperlink{classadc_a14680b48b723bf1adddd2741ebb18a3e}{ptr\+\_\+to\+\_\+serial}\hypertarget{classadc_a14680b48b723bf1adddd2741ebb18a3e}{}\label{classadc_a14680b48b723bf1adddd2741ebb18a3e}
+
+\begin{DoxyCompactList}\small\item\em The A\+DC class uses this pointer to the serial port to dump all the A/D inputs to the serial for debugging purposes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class runs the A/D converter on an A\+VR processor. 
+
+These are some simple drivers to handle analog readings on the ME 405 board. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{adc@{adc}!adc@{adc}}
+\index{adc@{adc}!adc@{adc}}
+\subsubsection[{\texorpdfstring{adc(emstream $\ast$=\+N\+U\+L\+L)}{adc(emstream *=NULL)}}]{\setlength{\rightskip}{0pt plus 5cm}adc\+::adc (
+\begin{DoxyParamCaption}
+\item[{emstream $\ast$}]{p\+\_\+serial\+\_\+port = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\hypertarget{classadc_af3b8262c08f5fc5ae325a20622883424}{}\label{classadc_af3b8262c08f5fc5ae325a20622883424}
+
+
+This constructor sets up an A/D converter. 
+
+The A/D is made ready so that when a method such as {\ttfamily \hyperlink{classadc_a2190a59696a7093e1ea605e998ccf97e}{read\+\_\+once()}} is called, correct A/D conversions can be performed. T\+O\+DO\+: This code is supplied as gibberish which isn\textquotesingle{}t very usable for much besides verifying that the A/D can work. It should be re-\/written in a useful and readable way, and this comment should be changed to {\bfseries say} {\bfseries something} {\bfseries useful}. 
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+serial\+\_\+port} & A pointer to the serial port which writes debugging info. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{adc@{adc}!read\+\_\+once@{read\+\_\+once}}
+\index{read\+\_\+once@{read\+\_\+once}!adc@{adc}}
+\subsubsection[{\texorpdfstring{read\+\_\+once(uint8\+\_\+t)}{read_once(uint8_t)}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t adc\+::read\+\_\+once (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{ch}
+\end{DoxyParamCaption}
+)}\hypertarget{classadc_a2190a59696a7093e1ea605e998ccf97e}{}\label{classadc_a2190a59696a7093e1ea605e998ccf97e}
+
+
+This method takes one A/D reading from the given channel and returns it. 
+
+This code clears the M\+UX Selection first, and turns off some features we don\textquotesingle{}t use at first. T\+O\+DO\+: This code is supplied as gibberish which isn\textquotesingle{}t very usable for much besides verifying that the A/D can work. It should be re-\/written in readable C++. Also, the case of a timeout should be gracefully handled; the current minimal mess can hang in certain circumstances. And make sure to {\bfseries fix} {\bfseries this} {\bfseries comment!} 
+\begin{DoxyParams}{Parameters}
+{\em ch} & The A/D channel which is being read must be from 0 to 7 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the A/D conversion 
+\end{DoxyReturn}
+\index{adc@{adc}!read\+\_\+oversampled@{read\+\_\+oversampled}}
+\index{read\+\_\+oversampled@{read\+\_\+oversampled}!adc@{adc}}
+\subsubsection[{\texorpdfstring{read\+\_\+oversampled(uint8\+\_\+t, uint8\+\_\+t)}{read_oversampled(uint8_t, uint8_t)}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t adc\+::read\+\_\+oversampled (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{channel, }
+\item[{uint8\+\_\+t}]{samples}
+\end{DoxyParamCaption}
+)}\hypertarget{classadc_a58f1030fe64d3dea4ccd8a2687dd6fce}{}\label{classadc_a58f1030fe64d3dea4ccd8a2687dd6fce}
+
+
+This takes an averaged A/D reading from a given number of samples. 
+
+It runs a basic F\+OR loop in code, taking multiple readings and averaging them before returning the average input. 
+\begin{DoxyParams}{Parameters}
+{\em channel} & Which A/D channel is being read, from 0 to 7 \\
+\hline
+{\em samples} & How many samples to take from the A/D converter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A/D conversion result, will be between 0 and 1024. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{adc_8h}{adc.\+h}\item 
+\hyperlink{adc_8cpp}{adc.\+cpp}\end{DoxyCompactItemize}
